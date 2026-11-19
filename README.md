@@ -44,7 +44,7 @@ git push -u origin main
 
 ## Checklist setelah deploy
 
-- [ ] Ganti semua `YOUR-DOMAIN.vercel.app` di `index.html`, `robots.txt`, `sitemap.xml` dengan domain asli.
+- [x] Ganti semua `YOUR-DOMAIN.vercel.app` dengan domain asli (`portfolio-farizkazhimy.vercel.app`, 19 Nov 2026).
 - [ ] Verifikasi URL LinkedIn dan nomor WhatsApp di bagian Kontak.
 - [ ] Tes preview link di LinkedIn Post Inspector / WhatsApp.
 - [ ] Jalankan Lighthouse (target: Performance, Accessibility, SEO ≥ 95).

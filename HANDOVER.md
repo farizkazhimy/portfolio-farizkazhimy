@@ -70,7 +70,7 @@ Catatan: di dalam blok gelap, teks kecil dan angka memakai cobalt lebih terang (
 
 ## 8. Rencana langkah berikutnya (urut prioritas)
 1. Refactor blok "LIGHT THEME" di akhir `styles.css`: pindahkan nilai ke token `:root` dan hapus aturan dark yang sudah tertimpa (saat ini tema terang diterapkan sebagai override di atas tema gelap, dan ini hutang teknis).
-2. Ganti semua `YOUR-DOMAIN.vercel.app` di `index.html` (canonical, og:url, og:image), `robots.txt`, `sitemap.xml` setelah domain final.
+2. ~~Ganti `YOUR-DOMAIN.vercel.app`~~ Selesai 19 Nov 2026: domain `portfolio-farizkazhimy.vercel.app` (ganti lagi kalau nanti pakai domain custom).
 3. Isi studi kasus dari form user; jangan menambah klaim yang tidak ada di CV atau form.
 4. Self-host font (hapus ketergantungan Google Fonts) untuk performa dan privasi; tambah `preload` woff2.
 5. Jalankan Lighthouse (target Performance, Accessibility, SEO, Best Practices ≥ 95); cek kontras teks kecil di blok gelap.
