@@ -224,7 +224,7 @@ h3 { font-size: 1.15rem; font-weight: 650; }
   animation: float 7s ease-in-out infinite;
 }
 .profile__photo { position: relative; isolation: isolate; border-radius: 18px; overflow: hidden; aspect-ratio: 4 / 5; background: var(--bg); }
-.profile__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 8%; }
+.profile__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 8%; transform: scaleX(-1); } /* mirrored so the portrait faces the headline */
 .profile__meta { display: grid; gap: 2px; padding: 16px 8px 6px; }
 .profile__meta strong { font-family: var(--font-head); font-size: 1.05rem; }
 .profile__meta span { color: var(--muted); font-size: .85rem; }
