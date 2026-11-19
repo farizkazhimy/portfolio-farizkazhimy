@@ -27,12 +27,12 @@
   const closeMenu = () => {
     links.classList.remove('is-open');
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Buka menu');
+    toggle.setAttribute('aria-label', 'Open menu');
   };
   toggle.addEventListener('click', () => {
     const open = links.classList.toggle('is-open');
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   });
   links.addEventListener('click', (e) => { if (e.target.closest('a')) closeMenu(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
@@ -78,7 +78,7 @@
   }
 
   /* Count-up */
-  const fmt = (n, d) => n.toFixed(d).replace('.', ',');
+  const fmt = (n, d) => n.toFixed(d);
   const countUp = (el) => {
     const target = parseFloat(el.dataset.count);
     const dec = parseInt(el.dataset.decimals || '0', 10);

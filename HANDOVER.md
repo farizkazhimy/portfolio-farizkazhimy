@@ -7,7 +7,7 @@ Terakhir diperbarui: 19 Nov 2026.
 Landing page portfolio pribadi yang menjelaskan pengalaman kerja di bidang IT (Project Manager / BA, proyek perbankan).
 - Kode disimpan di GitHub, di-deploy ke Vercel.
 - Gaya: glassmorphism + minimalis, motion halus, tipografi bersih, hierarki visual kuat, responsif, siap produksi.
-- Bahasa konten: Indonesia (istilah teknis tetap Inggris).
+- Bahasa konten: Inggris (diganti dari Indonesia pada 19 Nov 2026 atas permintaan user).
 
 ## 2. Status saat ini
 Versi aktif: folder `portfolio-light/` (palet baru). Sudah jadi dan sudah di-screenshot di desktop 1440px dan mobile 390px, tanpa error console dan tanpa overflow horizontal. **Belum pernah di-deploy ke Vercel dan belum dites Lighthouse.**
