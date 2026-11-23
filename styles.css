@@ -319,9 +319,23 @@ h3 { font-size: 1.15rem; font-weight: 650; }
 .tl-list li::before { content: ""; position: absolute; left: 0; top: .7em; width: 8px; height: 2px; background: var(--accent); border-radius: 2px; }
 
 /* ---------- Skills ---------- */
-.skills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.skill-card { border-radius: var(--radius-md); padding: 24px; display: grid; gap: 16px; align-content: start; }
-.skill-card h3 { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--highlight-text); font-weight: 600; font-family: var(--font-body); }
+/* bento: the banking domain as the large dark tile, methods beside it, the toolkit with real logos across the foot */
+.bento { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-areas: "domain domain method method" "domain domain docs docs" "tools tools tools tools"; gap: 16px; }
+.bento__tile { border-radius: var(--radius-md); padding: 24px; display: grid; gap: 16px; align-content: start; }
+.bento__tile h3 { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--highlight-text); font-weight: 600; font-family: var(--font-body); }
+.bento__domain { grid-area: domain; padding: clamp(24px, 3vw, 36px); align-content: space-between; min-height: 280px; }
+.bento__tile:nth-child(2) { grid-area: method; }
+.bento__tile:nth-child(3) { grid-area: docs; }
+.bento__tools { grid-area: tools; }
+.bento__big { font-family: var(--font-head); font-weight: 800; font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -0.03em; line-height: 1.02; }
+.bento__note { color: var(--muted); font-size: .95rem; }
+.bento__domain .chips li { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.12); color: var(--on-dark); }
+.toolkit { display: flex; flex-wrap: wrap; gap: 10px; }
+.toolkit li { display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 0 18px 0 14px; white-space: nowrap; border-radius: var(--radius-sm); background: rgba(255,255,255,.65); border: 1px solid var(--line); font-size: .92rem; font-weight: 600; transition: border-color .25s, transform .25s var(--ease); }
+.toolkit li:hover { border-color: rgba(31,79,216,.45); transform: translateY(-2px); }
+.toolkit img, .toolkit__mark { width: 28px; height: 28px; flex: none; object-fit: contain; }
+.toolkit__mark { border-radius: 8px; background: var(--accent-tint); }
+.toolkit__mark--text { display: grid; place-items: center; font-size: .62rem; font-weight: 700; letter-spacing: .02em; color: var(--accent); }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chips li { padding: 7px 13px; border-radius: 999px; font-size: .84rem; font-weight: 500; color: var(--text-soft); background: rgba(255,255,255,.65); border: 1px solid var(--line); transition: border-color .25s, background .25s, transform .25s var(--ease); }
 .chips li:hover { border-color: rgba(31,79,216,.45); background: var(--accent-tint); transform: translateY(-2px); }
@@ -366,7 +380,7 @@ h3 { font-size: 1.15rem; font-weight: 650; }
 
 /* ---------- Dark blocks (30% jet black): stats, featured project, contact ----------
    Inside them the role tokens switch to light text and a lighter cobalt for contrast. */
-.stats, .project--featured, .cta {
+.stats, .project--featured, .cta, .bento__domain {
   --text: var(--on-dark);
   --muted: var(--on-dark-muted);
   --highlight: var(--accent-on-dark);
@@ -394,7 +408,8 @@ h3 { font-size: 1.15rem; font-weight: 650; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
-  .skills { grid-template-columns: repeat(2, 1fr); }
+  .bento { grid-template-columns: 1fr 1fr; grid-template-areas: "domain domain" "method docs" "tools tools"; }
+  .bento__domain { min-height: 0; }
   .steps { grid-template-columns: repeat(3, 1fr); }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .stats li:nth-child(3)::before { display: none; }
@@ -434,7 +449,10 @@ h3 { font-size: 1.15rem; font-weight: 650; }
   .stats { grid-template-columns: 1fr; }
   .stats li + li::before { display: none; }
   .stats li:nth-child(n+2) { border-top: 1px solid var(--glass-border); }
-  .skills, .steps { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  .bento { grid-template-columns: 1fr; grid-template-areas: "domain" "method" "docs" "tools"; }
+  .toolkit { display: grid; grid-template-columns: 1fr 1fr; }
+  .toolkit li { white-space: normal; padding: 0 12px; gap: 10px; font-size: .85rem; line-height: 1.25; }
   .rotator__word { white-space: normal; }
   .hero__actions .btn { flex: 1 1 100%; }
   .pillars li { padding: 20px 20px 20px 76px; }
